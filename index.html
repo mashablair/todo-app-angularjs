@@ -12,40 +12,7 @@
   <div ng-controller="TodoController as todo">
     <h1>My To-Do's</h1>
 
-    <div class="todo">
-    <form class="todo__form" ng-submit="todo.addTodo()">
-      <input type="text" ng-model="todo.newTodo" placeholder="Add new todo!">
-    </form>
-
-      <ul class="todo__list">
-        <li ng-repeat="item in todo.list">
-          <!-- make sure ng-chage is on the <input>, not on the <label> -->
-          <input type="checkbox" name="complete"
-            id="todo-{{$index}}"
-            ng-model="item.completed"
-            ng-change="todo.toggleState(item)">
-          <label
-            for="todo-{{$index}}"
-            class="toggle">
-          </label>
-          <p
-            ng-dblclick="showEditField = true"
-            ng-hide="showEditField">{{item.title}}
-          </p>
-
-          <input type="text"
-            ng-model="item.title"
-            ng-show="showEditField"
-            ng-blur="todo.updateTodo(item, $index); showEditField = false"
-            todo-autofocus="showEditField" />
-
-            <a href=""
-            ng-click="todo.removeTodo(item, $index)"
-            aria-label="remove item">&#215
-          </a>
-        </li>
-      </ul>
-    </div>
+    <todo-app></todo-app>
 
     <!-- great for debugging! -->
     <pre>{{ todo.list | json }}</pre>
@@ -55,6 +22,7 @@
 
     <script src="js/scripts/app.js"></script>
     <script src="js/scripts/todo.controller.js"></script>
+    <script src="js/scripts/todo.component.js"></script>
     <script src="js/scripts/todo.service.js"></script>
     <script src="js/scripts/todoAutofocus.directive.js"></script>
   </body>

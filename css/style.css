@@ -18,9 +18,9 @@ ul {
 
 .todo {
   position: relative;
-  width: 350px;
-  margin: 0 auto;
+  max-width: 550px;
   padding: 0 0 12px;
+  margin: 2rem 0;
   background: #fff;
   border: 1px solid;
   border-color: #dfdcdc #d9d6d6 #ccc;
